@@ -4,32 +4,44 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
-    public float rEndPos;
-    public float reloadTime;
+    
 
     Vector3 defPos;
     float reloadProgression;
 
+	[Header("GunVariables")]
     public bool isReloading;
-
     public int bulletCount;
     public float damage, bulletSpeed, fireRate, spread;
+	public int ammo, maxAmmo;
+	public bool isAuto = true;
+	public float rEndPos;
+	public float reloadTime;
 
-    public float distanceFromFace;
+	//public float distanceFromFace;
 
-    float shootTime = 0f;
+	float shootTime = 0f;
+
+	[Header("GameObjects")]
     public Transform head,tip;
-
     public GameObject bulletPrefab;
 
-    public int ammo, maxAmmo;
 
-    public bool isAuto = true;
+	float defFov;
+	public enum AdsMode { none, iron, holo, scope};
+	[Header("ADS Variables")]
+	public AdsMode adsMode;
+	public Vector3 AdsPos;
+	public float adsRate, scopeMulti,zoomRate;
+	public GameObject scopeGo;
+
+    
 
     // Start is called before the first frame update
     void Start()
     {
         defPos = transform.localPosition;
+		defFov = Camera.main.fieldOfView;
     }
 
     // Update is called once per frame
@@ -79,7 +91,7 @@ public class Gun : MonoBehaviour
                 transform.localPosition = defPos;
             }
         }
-        
+		DoAds();
     }
     
     void shoot()
@@ -119,10 +131,111 @@ public class Gun : MonoBehaviour
     {
         print(gameObject.name);
     }
+	private void OnDisable()
+	{
+		transform.localPosition = Vector3.MoveTowards(transform.localPosition, defPos, adsRate);
+		Camera.main.fieldOfView = Mathf.MoveTowards(Camera.main.fieldOfView, defFov, zoomRate);
 
-    float reloadPos()
+		if (Vector3.Distance(transform.localPosition, AdsPos) > .01f)
+		{
+			if (GetComponent<MeshRenderer>())
+			{
+				GetComponent<MeshRenderer>().enabled = true;
+			}
+			else if (GetComponentsInChildren<MeshRenderer>().Length > 0)
+			{
+				foreach (MeshRenderer meshRenderer in GetComponentsInChildren<MeshRenderer>())
+				{
+					meshRenderer.enabled = true;
+				}
+			}
+			if (scopeGo)
+			{
+				scopeGo.SetActive(false);
+			}
+
+		}
+	}
+	float reloadPos()
     {
         ///print(Mathf.Clamp(rEndPos * Mathf.Sin(reloadProgression * ((2 * Mathf.PI) / reloadTime)), 0, Mathf.Infinity));
         return  Mathf.Clamp(rEndPos * Mathf.Sin(reloadProgression * (( Mathf.PI) /reloadTime)),0,999999);
     }
+
+
+	void DoAds()
+	{
+		bool doAds = Input.GetMouseButton(1);
+		if (!doAds || isReloading)
+		{
+			transform.localPosition = Vector3.MoveTowards(transform.localPosition, defPos, adsRate);
+			Camera.main.fieldOfView = Mathf.MoveTowards(Camera.main.fieldOfView, defFov, zoomRate);
+
+			if (Vector3.Distance(transform.localPosition, AdsPos) > .01f)
+			{
+				if (GetComponent<MeshRenderer>())
+				{
+					GetComponent<MeshRenderer>().enabled = true;
+				}
+				else if (GetComponentsInChildren<MeshRenderer>().Length > 0)
+				{
+					foreach (MeshRenderer meshRenderer in GetComponentsInChildren<MeshRenderer>())
+					{
+						meshRenderer.enabled = true;
+					}
+				}
+				if (scopeGo)
+				{
+					scopeGo.SetActive(false);
+				}
+
+			}
+		}
+		if (isReloading)
+		{
+			return;
+		}
+		if (doAds)
+		{
+			switch (adsMode)
+			{
+				case AdsMode.scope:
+					{
+
+						transform.localPosition = Vector3.MoveTowards(transform.localPosition, AdsPos, adsRate);
+						Camera.main.fieldOfView = Mathf.MoveTowards(Camera.main.fieldOfView, defFov / scopeMulti, zoomRate);
+						if (Vector3.Distance(transform.localPosition, AdsPos) < .01f)
+						{
+							if (GetComponent<MeshRenderer>())
+							{
+								GetComponent<MeshRenderer>().enabled = false;
+							}
+							else if (GetComponentsInChildren<MeshRenderer>().Length > 0)
+							{
+								foreach (MeshRenderer meshRenderer in GetComponentsInChildren<MeshRenderer>())
+								{
+									meshRenderer.enabled = false;
+								}
+							}
+
+							scopeGo.SetActive(true);
+						}
+					}
+
+					break;
+
+
+
+				case AdsMode.iron:
+					{
+						transform.localPosition = Vector3.MoveTowards(transform.localPosition, AdsPos, adsRate);
+						Camera.main.fieldOfView = Mathf.MoveTowards(Camera.main.fieldOfView, defFov / scopeMulti, zoomRate);
+
+						break;
+					}
+			}
+		}
+		
+
+	}
 }
