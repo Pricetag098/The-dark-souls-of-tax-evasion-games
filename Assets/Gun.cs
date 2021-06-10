@@ -114,7 +114,12 @@ public class Gun : MonoBehaviour
         }
         ammo--;
     }
-    
+
+    private void OnEnable()
+    {
+        print(gameObject.name);
+    }
+
     float reloadPos()
     {
         ///print(Mathf.Clamp(rEndPos * Mathf.Sin(reloadProgression * ((2 * Mathf.PI) / reloadTime)), 0, Mathf.Infinity));

@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
     public enum BulletTypes { bullet,rocket};
     public BulletTypes bulletType;
 
-
+    public float armingDist;
     public GameObject explosionVfx;
     public float minBounceAngle;
 
@@ -67,6 +67,11 @@ public class Bullet : MonoBehaviour
     }
     void Explode(Vector3 pos)
     {
+        if(Vector3.Distance(transform.position,GameObject.FindGameObjectWithTag("Player").transform.position) < armingDist)
+        {
+            Destroy(gameObject);
+            return;
+        }
         Destroy(Instantiate(explosionVfx, pos,Quaternion.Euler(Vector3.zero)),5);
     }
 

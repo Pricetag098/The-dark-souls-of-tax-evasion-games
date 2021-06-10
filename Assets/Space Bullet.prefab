@@ -5405,7 +5405,7 @@ MonoBehaviour:
   damage: 0
   whatIsEnemy:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
 --- !u!135 &4014302247835896449
 SphereCollider:
   m_ObjectHideFlags: 0
