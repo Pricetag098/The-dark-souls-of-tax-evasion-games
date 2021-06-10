@@ -97,7 +97,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71207094ddd54b8499b4cc73c41a0e8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletType: 0
+  explosionVfx: {fileID: 0}
+  minBounceAngle: 120
   damage: 0
+  whatIsEnemy:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!135 &6145641518452792666
 SphereCollider:
   m_ObjectHideFlags: 0

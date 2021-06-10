@@ -107,7 +107,7 @@ public class Gun : MonoBehaviour
                 -Random.value + Random.value
                 ).normalized;
             
-            GameObject bullet = Instantiate(bulletPrefab);
+            GameObject bullet = Instantiate(bulletPrefab,tip.position,Quaternion.Euler(transform.forward));
             bullet.transform.position = tip.position;
             bullet.GetComponent<Bullet>().GO((dir + (rand * spread)) * bulletSpeed, damage);
             Destroy(bullet, 5);
