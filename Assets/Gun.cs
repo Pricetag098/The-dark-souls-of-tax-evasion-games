@@ -94,7 +94,7 @@ public class Gun : MonoBehaviour
 		DoAds();
     }
     
-    void shoot()
+     public void shoot()
     {
         if(ammo <= 0 || isReloading)
         {
