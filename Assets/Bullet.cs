@@ -45,8 +45,10 @@ public class Bullet : MonoBehaviour
         {
             case BulletTypes.bullet:
                 {
-                    
-                    if(collision.gameObject.layer == whatIsEnemy.value)
+                    print(collision.gameObject.name);
+                    print(whatIsEnemy.value);
+                    print(whatIsEnemy);
+                    if (Mathf.Pow(2, collision.gameObject.layer) == whatIsEnemy.value)
                     {
 
                         if (collision.gameObject.GetComponent<Health>())
@@ -57,7 +59,7 @@ public class Bullet : MonoBehaviour
                     else if(Vector3.Angle(transform.forward, collision.GetContact(0).normal) > minBounceAngle)
                     {
                         
-                        Destroy(gameObject);
+                        //Destroy(gameObject);
                     }
                     break;
                 }
