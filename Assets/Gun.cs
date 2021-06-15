@@ -97,7 +97,6 @@ public class Gun : MonoBehaviour
         if (shootTime >= fireRate)
         {
 
-
             if (ammo <= 0 || isReloading)
             {
                 return;
