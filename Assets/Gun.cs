@@ -35,13 +35,14 @@ public class Gun : MonoBehaviour
 	public float adsRate, scopeMulti,zoomRate;
 	public GameObject scopeGo;
 
-    
 
+    Camera cam;
     // Start is called before the first frame update
     void Start()
     {
+        cam = Camera.main;
         defPos = transform.localPosition;
-		defFov = Camera.main.fieldOfView;
+		defFov = cam.fieldOfView;
     }
 
     // Update is called once per frame
@@ -51,22 +52,19 @@ public class Gun : MonoBehaviour
         {
             if (Input.GetMouseButton(0))
             {
-                if(shootTime >= fireRate)
-                {
-                    shoot();
-                    shootTime = 0;
-                }
+                shoot();
+                
+                
             }
         }
         else
         {
             if (Input.GetMouseButtonDown(0))
             {
-                if (shootTime >= fireRate)
-                {
+               
                     shoot();
-                    shootTime = 0;
-                }
+                    
+                
             }
         }
         shootTime += Time.deltaTime;
@@ -94,47 +92,52 @@ public class Gun : MonoBehaviour
 		DoAds();
     }
     
-    void shoot()
+     public void shoot()
     {
-        if(ammo <= 0 || isReloading)
+        if (shootTime >= fireRate)
         {
-            return;
-        }
 
-        for(int i = 0; i < bulletCount; i++)
-        {
-            Vector3 dir = head.transform.forward;
-            RaycastHit hit;
-            if(Physics.Raycast(head.position, head.transform.forward,out hit, Mathf.Infinity))
+            if (ammo <= 0 || isReloading)
             {
-                dir = (hit.point-tip.transform.position).normalized; 
+                return;
             }
-            
-            
+
+            for (int i = 0; i < bulletCount; i++)
+            {
+                Vector3 dir = head.transform.forward;
+                RaycastHit hit;
+                if (Physics.Raycast(head.position, head.transform.forward, out hit, Mathf.Infinity))
+                {
+                    dir = (hit.point - tip.transform.position).normalized;
+                }
 
 
-            Vector3 rand = new Vector3(
-                -Random.value + Random.value, 
-                -Random.value + Random.value,
-                -Random.value + Random.value
-                ).normalized;
-            
-            GameObject bullet = Instantiate(bulletPrefab,tip.position,Quaternion.Euler(transform.forward));
-            bullet.transform.position = tip.position;
-            bullet.GetComponent<Bullet>().GO((dir + (rand * spread)) * bulletSpeed, damage);
-            Destroy(bullet, 5);
+
+
+                Vector3 rand = new Vector3(
+                    -Random.value + Random.value,
+                    -Random.value + Random.value,
+                    -Random.value + Random.value
+                    ).normalized;
+
+                GameObject bullet = Instantiate(bulletPrefab, tip.position, Quaternion.Euler(transform.forward));
+                bullet.transform.position = tip.position;
+                bullet.GetComponent<Bullet>().GO((dir + (rand * spread)) * bulletSpeed, damage);
+                Destroy(bullet, 5);
+            }
+            ammo--;
+            shootTime = 0;
         }
-        ammo--;
     }
 
     private void OnEnable()
     {
-        print(gameObject.name);
+        //print(gameObject.name);
     }
 	private void OnDisable()
 	{
 		transform.localPosition = Vector3.MoveTowards(transform.localPosition, defPos, adsRate);
-		Camera.main.fieldOfView = Mathf.MoveTowards(Camera.main.fieldOfView, defFov, zoomRate);
+		cam.fieldOfView = Mathf.MoveTowards(cam.fieldOfView, defFov, zoomRate);
 
 		if (Vector3.Distance(transform.localPosition, AdsPos) > .01f)
 		{
@@ -169,7 +172,7 @@ public class Gun : MonoBehaviour
 		if (!doAds || isReloading)
 		{
 			transform.localPosition = Vector3.MoveTowards(transform.localPosition, defPos, adsRate);
-			Camera.main.fieldOfView = Mathf.MoveTowards(Camera.main.fieldOfView, defFov, zoomRate);
+			cam.fieldOfView = Mathf.MoveTowards(cam.fieldOfView, defFov, zoomRate);
 
 			if (Vector3.Distance(transform.localPosition, AdsPos) > .01f)
 			{
@@ -203,7 +206,7 @@ public class Gun : MonoBehaviour
 					{
 
 						transform.localPosition = Vector3.MoveTowards(transform.localPosition, AdsPos, adsRate);
-						Camera.main.fieldOfView = Mathf.MoveTowards(Camera.main.fieldOfView, defFov / scopeMulti, zoomRate);
+						cam.fieldOfView = Mathf.MoveTowards(cam.fieldOfView, defFov / scopeMulti, zoomRate);
 						if (Vector3.Distance(transform.localPosition, AdsPos) < .01f)
 						{
 							if (GetComponent<MeshRenderer>())
@@ -229,7 +232,7 @@ public class Gun : MonoBehaviour
 				case AdsMode.iron:
 					{
 						transform.localPosition = Vector3.MoveTowards(transform.localPosition, AdsPos, adsRate);
-						Camera.main.fieldOfView = Mathf.MoveTowards(Camera.main.fieldOfView, defFov / scopeMulti, zoomRate);
+						cam.fieldOfView = Mathf.MoveTowards(cam.fieldOfView, defFov / scopeMulti, zoomRate);
 
 						break;
 					}

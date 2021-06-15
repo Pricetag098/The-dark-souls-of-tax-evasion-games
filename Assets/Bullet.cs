@@ -45,15 +45,21 @@ public class Bullet : MonoBehaviour
         {
             case BulletTypes.bullet:
                 {
-                    
-                    if(collision.gameObject.layer == whatIsEnemy)
+                    print(collision.gameObject.name);
+                    print(whatIsEnemy.value);
+                    print(whatIsEnemy);
+                    if (Mathf.Pow(2, collision.gameObject.layer) == whatIsEnemy.value)
                     {
-                        //do damage
+
+                        if (collision.gameObject.GetComponent<Health>())
+                        {
+                            collision.gameObject.GetComponent<Health>().DoDamage(damage);
+                        }
                     }
                     else if(Vector3.Angle(transform.forward, collision.GetContact(0).normal) > minBounceAngle)
                     {
                         
-                        Destroy(gameObject);
+                        //Destroy(gameObject);
                     }
                     break;
                 }
