@@ -7,8 +7,7 @@ public class Bullet : MonoBehaviour
     public enum BulletTypes { bullet,rocket};
     public BulletTypes bulletType;
 
-    public float armingDist;
-    public GameObject explosionVfx;
+    
     public float minBounceAngle;
 
     public float damage;
@@ -16,6 +15,11 @@ public class Bullet : MonoBehaviour
     public LayerMask whatIsEnemy;
 
     Rigidbody rb;
+
+    public float armingDist,expRadius;
+    public GameObject explosionVfx;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,11 +59,12 @@ public class Bullet : MonoBehaviour
                         {
                             collision.gameObject.GetComponent<Health>().DoDamage(damage);
                         }
+                        Destroy(gameObject);
                     }
                     else if(Vector3.Angle(transform.forward, collision.GetContact(0).normal) > minBounceAngle)
                     {
                         
-                        //Destroy(gameObject);
+                        Destroy(gameObject);
                     }
                     break;
                 }
@@ -73,12 +78,26 @@ public class Bullet : MonoBehaviour
     }
     void Explode(Vector3 pos)
     {
-        if(Vector3.Distance(transform.position,GameObject.FindGameObjectWithTag("Player").transform.position) < armingDist)
+        if(Vector3.Distance(transform.position,GameObject.FindGameObjectWithTag("Player").transform.GetChild(0).position) < armingDist)
         {
             Destroy(gameObject);
             return;
         }
+        Collider[] hits = Physics.OverlapSphere(pos, expRadius, whatIsEnemy);
+        print(hits.Length);
+        if(hits.Length > 0)
+        {
+            for(int i = 0; i < hits.Length; i++)
+            {
+                if (hits[i].gameObject.GetComponent<Health>())
+                {
+                    hits[i].gameObject.GetComponent<Health>().DoDamage(damage);
+                }
+            }
+            
+        }
+
         Destroy(Instantiate(explosionVfx, pos,Quaternion.Euler(Vector3.zero)),5);
     }
-
+    
 }

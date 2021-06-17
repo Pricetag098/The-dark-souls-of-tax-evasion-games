@@ -5400,12 +5400,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletType: 0
-  explosionVfx: {fileID: 0}
   minBounceAngle: 100
   damage: 0
   whatIsEnemy:
     serializedVersion: 2
     m_Bits: 128
+  armingDist: 0
+  expRadius: 0
+  explosionVfx: {fileID: 0}
 --- !u!135 &4014302247835896449
 SphereCollider:
   m_ObjectHideFlags: 0
