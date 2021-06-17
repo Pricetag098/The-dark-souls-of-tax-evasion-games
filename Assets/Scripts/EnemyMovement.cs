@@ -25,6 +25,7 @@ public class EnemyMovement : MonoBehaviour
             m_navmesh.SetDestination(player.transform.position);
             if (player_v.magnitude < 5)
             {
+                transform.forward = player_v;
                 m_navmesh.isStopped = true;
             }
         }
