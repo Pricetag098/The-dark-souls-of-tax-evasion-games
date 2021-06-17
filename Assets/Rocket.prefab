@@ -10342,7 +10342,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   armingDist: 5
-  expRadius: 22.05
+  expRadius: 2
   explosionVfx: {fileID: 928641722804339600, guid: d9390df6dd9486e4ebb915ceb6e93cc1, type: 3}
 --- !u!136 &4757667647240959983
 CapsuleCollider:

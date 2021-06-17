@@ -588,7 +588,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1784927830
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1165,6 +1165,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8148422019015697624}
+  - component: {fileID: 137317167}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -1189,6 +1190,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &137317167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8148422019015697630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b190886ef0879f44fa17d4b883eef256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  maxHealth: 100
+  isPlayer: 1
 --- !u!1001 &2236964239773865521
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1446,6 +1462,10 @@ PrefabInstance:
       propertyPath: head
       value: 
       objectReference: {fileID: 8148422017298538172}
+    - target: {fileID: 4431424383186240538, guid: 5e230db77ade70048a7b8628df76fe07, type: 3}
+      propertyPath: shootSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 233729aa2fa5dbd4c9e3a32cb75cc51e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e230db77ade70048a7b8628df76fe07, type: 3}
 --- !u!4 &8148422017859013431 stripped
@@ -1460,22 +1480,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8148422018693416763}
     m_Modifications:
-    - target: {fileID: 2079950243000970436, guid: 6985e38ed54c0c44194d91c568c00ed6, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.0030269057
-      objectReference: {fileID: 0}
-    - target: {fileID: 2079950243000970436, guid: 6985e38ed54c0c44194d91c568c00ed6, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.0030269057
-      objectReference: {fileID: 0}
-    - target: {fileID: 2079950243000970436, guid: 6985e38ed54c0c44194d91c568c00ed6, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.0030269057
-      objectReference: {fileID: 0}
-    - target: {fileID: 2079950243000970436, guid: 6985e38ed54c0c44194d91c568c00ed6, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.196
-      objectReference: {fileID: 0}
+    - target: {fileID: 314204844, guid: 6985e38ed54c0c44194d91c568c00ed6, type: 3}
+      propertyPath: head
+      value: 
+      objectReference: {fileID: 8148422017298538172}
+    - target: {fileID: 314204844, guid: 6985e38ed54c0c44194d91c568c00ed6, type: 3}
+      propertyPath: shootSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6a8745bb9f5c27b41bcbdd6300dc2d90, type: 3}
     - target: {fileID: 2224130053198191802, guid: 6985e38ed54c0c44194d91c568c00ed6, type: 3}
       propertyPath: m_Name
       value: RPG
@@ -1546,6 +1558,10 @@ PrefabInstance:
       propertyPath: scopeGo
       value: 
       objectReference: {fileID: 1784927829}
+    - target: {fileID: 2733411675780902452, guid: e4a08d07789a4794a9a26f9ec4374f07, type: 3}
+      propertyPath: shootSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 233729aa2fa5dbd4c9e3a32cb75cc51e, type: 3}
     - target: {fileID: 2733411675792246802, guid: e4a08d07789a4794a9a26f9ec4374f07, type: 3}
       propertyPath: m_Name
       value: L96_Sniper_Rifle
@@ -1730,6 +1746,10 @@ PrefabInstance:
       propertyPath: head
       value: 
       objectReference: {fileID: 8148422017298538172}
+    - target: {fileID: 2223382093831628309, guid: 21678ce0a39e23e429e2bc6296eaa0e7, type: 3}
+      propertyPath: shootSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 233729aa2fa5dbd4c9e3a32cb75cc51e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21678ce0a39e23e429e2bc6296eaa0e7, type: 3}
 --- !u!4 &8148422017521535094 stripped
@@ -1796,6 +1816,10 @@ PrefabInstance:
       propertyPath: head
       value: 
       objectReference: {fileID: 8148422017298538172}
+    - target: {fileID: 152994554698172330, guid: 3e650db15b6ee3f49a913c00f03c5045, type: 3}
+      propertyPath: shootSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 233729aa2fa5dbd4c9e3a32cb75cc51e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e650db15b6ee3f49a913c00f03c5045, type: 3}
 --- !u!4 &8148422017148603094 stripped
@@ -1862,6 +1886,10 @@ PrefabInstance:
       propertyPath: head
       value: 
       objectReference: {fileID: 8148422017298538172}
+    - target: {fileID: 164759620468490115, guid: 5a6ab5d90dc23c94a9ca54708b6913bd, type: 3}
+      propertyPath: shootSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 233729aa2fa5dbd4c9e3a32cb75cc51e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a6ab5d90dc23c94a9ca54708b6913bd, type: 3}
 --- !u!4 &8148422018684612311 stripped

@@ -78,19 +78,22 @@ public class Bullet : MonoBehaviour
     }
     void Explode(Vector3 pos)
     {
+        //Time.timeScale = 0;
         if(Vector3.Distance(transform.position,GameObject.FindGameObjectWithTag("Player").transform.GetChild(0).position) < armingDist)
         {
             Destroy(gameObject);
             return;
         }
         Collider[] hits = Physics.OverlapSphere(pos, expRadius, whatIsEnemy);
-        print(hits.Length);
+        //print(hits.Length);
         if(hits.Length > 0)
         {
             for(int i = 0; i < hits.Length; i++)
             {
+                //print(hits[i].name);
                 if (hits[i].gameObject.GetComponent<Health>())
                 {
+                    //print("OOOOOOOOEEEEE");
                     hits[i].gameObject.GetComponent<Health>().DoDamage(damage);
                 }
             }
@@ -99,5 +102,11 @@ public class Bullet : MonoBehaviour
 
         Destroy(Instantiate(explosionVfx, pos,Quaternion.Euler(Vector3.zero)),5);
     }
-    
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, expRadius);
+    }
+
 }

@@ -22,9 +22,12 @@ public class Gun : MonoBehaviour
 
 	float shootTime = 0f;
 
-	[Header("GameObjects")]
+	[Header("Setup")]
     public Transform head,tip;
     public GameObject bulletPrefab;
+    public AudioClip shootSound;
+
+    AudioSource audioSource;
 
 
 	float defFov;
@@ -40,6 +43,7 @@ public class Gun : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         cam = Camera.main;
         defPos = transform.localPosition;
 		defFov = cam.fieldOfView;
@@ -94,6 +98,7 @@ public class Gun : MonoBehaviour
     
      public void shoot()
     {
+       
         if (shootTime >= fireRate)
         {
 
@@ -127,6 +132,14 @@ public class Gun : MonoBehaviour
             }
             ammo--;
             shootTime = 0;
+
+            if (shootSound)
+            {
+                audioSource.clip = shootSound;
+                audioSource.pitch = 1 + (Random.Range(-1,1)*.2f);
+                audioSource.Play();
+            }
+
         }
     }
 
