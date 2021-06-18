@@ -25,7 +25,11 @@ public class Gun : MonoBehaviour
 	[Header("Setup")]
     public Transform head,tip;
     public GameObject bulletPrefab;
+
+    [Header("Sound")]
     public AudioClip shootSound;
+    public float pitchRange;
+    float defPitch;
 
     AudioSource audioSource;
 
@@ -47,6 +51,7 @@ public class Gun : MonoBehaviour
         cam = Camera.main;
         defPos = transform.localPosition;
 		defFov = cam.fieldOfView;
+        defPitch = audioSource.pitch;
     }
 
     // Update is called once per frame
@@ -136,7 +141,7 @@ public class Gun : MonoBehaviour
             if (shootSound)
             {
                 audioSource.clip = shootSound;
-                audioSource.pitch = 1 + (Random.Range(-1,1)*.2f);
+                audioSource.pitch = defPitch + Random.Range(-pitchRange,pitchRange);
                 audioSource.Play();
             }
 
@@ -150,7 +155,11 @@ public class Gun : MonoBehaviour
 	private void OnDisable()
 	{
 		transform.localPosition = Vector3.MoveTowards(transform.localPosition, defPos, adsRate);
-		cam.fieldOfView = Mathf.MoveTowards(cam.fieldOfView, defFov, zoomRate);
+        if (cam)
+        {
+            cam.fieldOfView = Mathf.MoveTowards(cam.fieldOfView, defFov, zoomRate);
+        }
+		
 
 		if (Vector3.Distance(transform.localPosition, AdsPos) > .01f)
 		{
