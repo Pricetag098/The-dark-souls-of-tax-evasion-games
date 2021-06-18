@@ -4217,6 +4217,78 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 417094731323003222, guid: 810ec8b5c29a1fa4aab99d2426f77e6d, type: 3}
+      propertyPath: pitchRange
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 417094731323003222, guid: 810ec8b5c29a1fa4aab99d2426f77e6d, type: 3}
+      propertyPath: shootSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 16d3674274ce89e4fabf8450ada930b0, type: 3}
+    - target: {fileID: 745324220612518246, guid: 810ec8b5c29a1fa4aab99d2426f77e6d, type: 3}
+      propertyPath: m_Pitch
+      value: 1.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 927971710602129458, guid: 810ec8b5c29a1fa4aab99d2426f77e6d, type: 3}
+      propertyPath: pitchRange
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 927971710602129458, guid: 810ec8b5c29a1fa4aab99d2426f77e6d, type: 3}
+      propertyPath: shootSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 16d3674274ce89e4fabf8450ada930b0, type: 3}
+    - target: {fileID: 1141852014424909905, guid: 810ec8b5c29a1fa4aab99d2426f77e6d, type: 3}
+      propertyPath: m_Pitch
+      value: 0.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 2307898937436044525, guid: 810ec8b5c29a1fa4aab99d2426f77e6d, type: 3}
+      propertyPath: pitchRange
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2307898937436044525, guid: 810ec8b5c29a1fa4aab99d2426f77e6d, type: 3}
+      propertyPath: shootSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 16d3674274ce89e4fabf8450ada930b0, type: 3}
+    - target: {fileID: 2336754325240210920, guid: 810ec8b5c29a1fa4aab99d2426f77e6d, type: 3}
+      propertyPath: m_Pitch
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 2547572215636114749, guid: 810ec8b5c29a1fa4aab99d2426f77e6d, type: 3}
+      propertyPath: m_Pitch
+      value: 0.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 5743841126046329495, guid: 810ec8b5c29a1fa4aab99d2426f77e6d, type: 3}
+      propertyPath: pitchRange
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8147084226554915309, guid: 810ec8b5c29a1fa4aab99d2426f77e6d, type: 3}
+      propertyPath: pitchRange
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8147084226554915309, guid: 810ec8b5c29a1fa4aab99d2426f77e6d, type: 3}
+      propertyPath: shootSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 16d3674274ce89e4fabf8450ada930b0, type: 3}
+    - target: {fileID: 8148422017990114611, guid: 810ec8b5c29a1fa4aab99d2426f77e6d, type: 3}
+      propertyPath: pitchRange
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8148422018014491979, guid: 810ec8b5c29a1fa4aab99d2426f77e6d, type: 3}
+      propertyPath: pitchRange
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8148422018027458146, guid: 810ec8b5c29a1fa4aab99d2426f77e6d, type: 3}
+      propertyPath: pitchRange
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8148422018708480862, guid: 810ec8b5c29a1fa4aab99d2426f77e6d, type: 3}
+      propertyPath: pitchRange
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8148422018946856995, guid: 810ec8b5c29a1fa4aab99d2426f77e6d, type: 3}
+      propertyPath: pitchRange
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 8148422019015697624, guid: 810ec8b5c29a1fa4aab99d2426f77e6d, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -4264,6 +4336,10 @@ PrefabInstance:
     - target: {fileID: 8148422019015697630, guid: 810ec8b5c29a1fa4aab99d2426f77e6d, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 9051967091386232851, guid: 810ec8b5c29a1fa4aab99d2426f77e6d, type: 3}
+      propertyPath: m_Pitch
+      value: 0.53
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 810ec8b5c29a1fa4aab99d2426f77e6d, type: 3}

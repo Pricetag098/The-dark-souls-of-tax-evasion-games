@@ -140,9 +140,9 @@ public class Gun : MonoBehaviour
 
             if (shootSound)
             {
-                audioSource.clip = shootSound;
+                //audioSource.clip = shootSound;
                 audioSource.pitch = defPitch + Random.Range(-pitchRange,pitchRange);
-                audioSource.Play();
+                audioSource.PlayOneShot(shootSound);
             }
 
         }
