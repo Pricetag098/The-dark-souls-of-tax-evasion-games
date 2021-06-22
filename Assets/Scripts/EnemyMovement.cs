@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class EnemyMovement : MonoBehaviour
     public NavMeshAgent m_navmesh;
     public GameObject safe;
     public GameObject player;
+    public bool withinRange;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +21,7 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         Vector3 player_v = player.transform.position - transform.position;
-        if (player_v.magnitude < 20 && Vector3.AngleBetween(transform.forward, player_v) < 85 && Vector3.AngleBetween(transform.forward, player_v) > -85)
+        if (player_v.magnitude < 20 && Vector3.Angle(transform.forward, player_v) < 85 && Vector3.Angle(transform.forward, player_v) > -85)
         {
             m_navmesh.isStopped = false;
             m_navmesh.SetDestination(player.transform.position);
