@@ -730,7 +730,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 8148422017893086464}
+  - {fileID: 3432909512907699880}
   - {fileID: 8148422018162554036}
   - {fileID: 8148422018693416763}
   m_Father: {fileID: 8148422019015697624}
@@ -783,7 +783,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 8148422017298538172}
+  m_Father: {fileID: 3432909512907699880}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &8148422017893086471
@@ -1205,6 +1205,54 @@ MonoBehaviour:
   health: 0
   maxHealth: 100
   isPlayer: 1
+--- !u!1 &8445065621522404922
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3432909512907699880}
+  - component: {fileID: 6024548533542936568}
+  m_Layer: 6
+  m_Name: CamShaker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3432909512907699880
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8445065621522404922}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8148422017893086464}
+  m_Father: {fileID: 8148422017298538172}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6024548533542936568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8445065621522404922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3a3f04dd5b2b804693de2d0b65c06ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 1
+  intensity: 1
+  frequncy: 20
+  timer: 0
 --- !u!1001 &2236964239773865521
 PrefabInstance:
   m_ObjectHideFlags: 0

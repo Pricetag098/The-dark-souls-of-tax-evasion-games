@@ -309,7 +309,7 @@ MonoBehaviour:
   head: {fileID: 0}
   tip: {fileID: 6747531176828248436}
   bulletPrefab: {fileID: 4014302247835896479, guid: 0c787d8f9e07896498799f2472fe132f, type: 3}
-  shootSound: {fileID: 8300000, guid: 16d3674274ce89e4fabf8450ada930b0, type: 3}
+  shootSound: {fileID: 8300000, guid: 895357a1de2dbd341bc4cf2b3fde9bef, type: 3}
   pitchRange: 0.1
   adsMode: 0
   AdsPos: {x: 0, y: 0, z: 0}

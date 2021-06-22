@@ -308,7 +308,7 @@ MonoBehaviour:
   head: {fileID: 0}
   tip: {fileID: 5264601431965672417}
   bulletPrefab: {fileID: 3684181280216053631, guid: 1cea2e1913105444794b8fa6211918e6, type: 3}
-  shootSound: {fileID: 8300000, guid: 16d3674274ce89e4fabf8450ada930b0, type: 3}
+  shootSound: {fileID: 8300000, guid: 895357a1de2dbd341bc4cf2b3fde9bef, type: 3}
   pitchRange: 0.1
   adsMode: 0
   AdsPos: {x: 0, y: 0, z: 0}
@@ -329,7 +329,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.667
-  m_Pitch: 0.53
+  m_Pitch: 0.29
   Loop: 0
   Mute: 0
   Spatialize: 0

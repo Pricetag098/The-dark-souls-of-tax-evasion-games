@@ -83,15 +83,15 @@ MonoBehaviour:
   bulletSpeed: 30
   fireRate: 1
   spread: 0
-  ammo: 10
-  maxAmmo: 10
+  ammo: 1
+  maxAmmo: 1
   isAuto: 1
   rEndPos: 0.1
   reloadTime: 1
   head: {fileID: 0}
   tip: {fileID: 681422418}
   bulletPrefab: {fileID: 6347911483555634926, guid: 362dfcfb1c569ce4f8baa0fead309d29, type: 3}
-  shootSound: {fileID: 8300000, guid: 6a8745bb9f5c27b41bcbdd6300dc2d90, type: 3}
+  shootSound: {fileID: 8300000, guid: 84457a28fbe12a141ab4e3c41fc0a3b9, type: 3}
   pitchRange: 0.1
   adsMode: 0
   AdsPos: {x: 0, y: 0, z: 0}

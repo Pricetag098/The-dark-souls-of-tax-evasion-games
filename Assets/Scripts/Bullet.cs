@@ -16,15 +16,15 @@ public class Bullet : MonoBehaviour
 
     Rigidbody rb;
 
-    public float armingDist,expRadius;
+    public float armingDist,expRadius,expForce;
     public GameObject explosionVfx;
 
-    public AudioClip hitSound;
-    AudioSource audioSource;
+    //public AudioClip hitSound;
+    //AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        //audioSource = GetComponent<AudioSource>();
         
     }
 
@@ -44,10 +44,10 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (hitSound)
-        {
-            audioSource.PlayOneShot(hitSound);
-        }
+        //if (hitSound)
+        //{
+            //audioSource.PlayOneShot(hitSound);
+        //}
         
         
         switch (bulletType)
@@ -57,12 +57,16 @@ public class Bullet : MonoBehaviour
                     print(collision.gameObject.name);
                     print(whatIsEnemy.value);
                     print(whatIsEnemy);
-                    if (Mathf.Pow(2, collision.gameObject.layer) == whatIsEnemy.value)
+                    if ((whatIsEnemy.value & (1 << collision.gameObject.layer))>0)
                     {
 
                         if (collision.gameObject.GetComponent<Health>())
                         {
                             collision.gameObject.GetComponent<Health>().DoDamage(damage);
+                        }
+                        else if (collision.gameObject.GetComponentInParent<Health>())
+                        {
+                            collision.gameObject.GetComponentInParent<Health>().DoDamage(damage);
                         }
                         Destroy(gameObject);
                     }
@@ -100,6 +104,14 @@ public class Bullet : MonoBehaviour
                 {
                     //print("OOOOOOOOEEEEE");
                     hits[i].gameObject.GetComponent<Health>().DoDamage(damage);
+                }
+                else if (hits[i].gameObject.GetComponentInParent<Health>())
+                {
+                    hits[i].gameObject.GetComponentInParent<Health>().DoDamage(damage);
+                }
+                if (hits[i].gameObject.GetComponent<Rigidbody>())
+                {
+                    hits[i].gameObject.GetComponent<Rigidbody>().AddExplosionForce(expForce, pos, expRadius, 0.1f);
                 }
             }
             
