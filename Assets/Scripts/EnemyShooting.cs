@@ -9,6 +9,7 @@ public class EnemyShooting : MonoBehaviour
     private GameObject m_gun;
     public Transform m_head;
     public GameObject player;
+    public EnemyMovement em;
 
     // Start is called before the first frame update
     void Start()
@@ -23,9 +24,10 @@ public class EnemyShooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        holster.transform.right = -(player.transform.position - gameObject.transform.position).normalized;
-        //holster.transform.rotation = holster.transform.rotation + new Vector3(0, 90, 0);
 
-        m_gun.GetComponent<Gun>().shoot();
+        // holster.transform.right = -(player.transform.position - gameObject.transform.position).normalized;
+        if (em.withinRange == true) { 
+            m_gun.GetComponent<Gun>().shoot();
+        }
     }
 }

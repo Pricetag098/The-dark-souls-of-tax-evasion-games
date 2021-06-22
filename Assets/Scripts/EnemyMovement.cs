@@ -21,8 +21,9 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         Vector3 player_v = player.transform.position - transform.position;
-        if (player_v.magnitude < 20 && Vector3.Angle(transform.forward, player_v) < 85 && Vector3.Angle(transform.forward, player_v) > -85)
+        if (player_v.magnitude < 30 && Vector3.Angle(transform.forward, player_v) < 85 && Vector3.Angle(transform.forward, player_v) > -85)
         {
+            withinRange = true;
             m_navmesh.isStopped = false;
             m_navmesh.SetDestination(player.transform.position);
             if (player_v.magnitude < 5)
@@ -33,6 +34,7 @@ public class EnemyMovement : MonoBehaviour
         }
         else
         {
+            withinRange = false;
             m_navmesh.isStopped = false;
             m_navmesh.SetDestination(safe.transform.position);
             if (Vector3.Distance(transform.position, safe.transform.position) < 2)
@@ -40,6 +42,6 @@ public class EnemyMovement : MonoBehaviour
                 m_navmesh.isStopped = true;
             }
         }
-        print(player_v.magnitude);
+        // print(player_v.magnitude);
     }
 }
