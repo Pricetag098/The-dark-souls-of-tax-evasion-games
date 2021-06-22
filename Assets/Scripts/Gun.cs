@@ -108,7 +108,7 @@ public class Gun : MonoBehaviour
                     return;
                 }
                 reload();
-                
+                return;
             }
 
             for (int i = 0; i < bulletCount; i++)
@@ -135,6 +135,7 @@ public class Gun : MonoBehaviour
                 Destroy(bullet, 5);
             }
             ammo--;
+            print(ammo);
             shootTime = 0;
 
             if (shootSound)

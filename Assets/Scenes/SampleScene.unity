@@ -5739,54 +5739,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 417094731323003222, guid: 810ec8b5c29a1fa4aab99d2426f77e6d, type: 3}
-      propertyPath: shootSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 895357a1de2dbd341bc4cf2b3fde9bef, type: 3}
-    - target: {fileID: 927971710602129458, guid: 810ec8b5c29a1fa4aab99d2426f77e6d, type: 3}
-      propertyPath: shootSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 895357a1de2dbd341bc4cf2b3fde9bef, type: 3}
-    - target: {fileID: 2307898937436044525, guid: 810ec8b5c29a1fa4aab99d2426f77e6d, type: 3}
-      propertyPath: shootSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 895357a1de2dbd341bc4cf2b3fde9bef, type: 3}
-    - target: {fileID: 5743841126046329495, guid: 810ec8b5c29a1fa4aab99d2426f77e6d, type: 3}
-      propertyPath: ammo
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5743841126046329495, guid: 810ec8b5c29a1fa4aab99d2426f77e6d, type: 3}
-      propertyPath: maxAmmo
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5743841126046329495, guid: 810ec8b5c29a1fa4aab99d2426f77e6d, type: 3}
-      propertyPath: shootSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 84457a28fbe12a141ab4e3c41fc0a3b9, type: 3}
-    - target: {fileID: 6024548533542936568, guid: 810ec8b5c29a1fa4aab99d2426f77e6d, type: 3}
-      propertyPath: duration
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6024548533542936568, guid: 810ec8b5c29a1fa4aab99d2426f77e6d, type: 3}
-      propertyPath: frequncy
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 6024548533542936568, guid: 810ec8b5c29a1fa4aab99d2426f77e6d, type: 3}
-      propertyPath: intensity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8147084226554915309, guid: 810ec8b5c29a1fa4aab99d2426f77e6d, type: 3}
-      propertyPath: shootSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 895357a1de2dbd341bc4cf2b3fde9bef, type: 3}
-    - target: {fileID: 8148422018162554036, guid: 810ec8b5c29a1fa4aab99d2426f77e6d, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8148422018693416763, guid: 810ec8b5c29a1fa4aab99d2426f77e6d, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 8148422019015697624, guid: 810ec8b5c29a1fa4aab99d2426f77e6d, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -5834,10 +5786,6 @@ PrefabInstance:
     - target: {fileID: 8148422019015697630, guid: 810ec8b5c29a1fa4aab99d2426f77e6d, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 9051967091386232851, guid: 810ec8b5c29a1fa4aab99d2426f77e6d, type: 3}
-      propertyPath: m_Pitch
-      value: 0.29
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 810ec8b5c29a1fa4aab99d2426f77e6d, type: 3}

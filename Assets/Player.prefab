@@ -1528,6 +1528,14 @@ PrefabInstance:
       propertyPath: head
       value: 
       objectReference: {fileID: 8148422017298538172}
+    - target: {fileID: 314204844, guid: 6985e38ed54c0c44194d91c568c00ed6, type: 3}
+      propertyPath: isAuto
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 314204844, guid: 6985e38ed54c0c44194d91c568c00ed6, type: 3}
+      propertyPath: maxAmmo
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2224130053198191802, guid: 6985e38ed54c0c44194d91c568c00ed6, type: 3}
       propertyPath: m_Name
       value: RPG
