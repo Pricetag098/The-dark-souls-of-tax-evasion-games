@@ -62,26 +62,20 @@ public class Gun : MonoBehaviour
             if (Input.GetMouseButton(0))
             {
                 shoot();
-                
-                
             }
         }
         else
         {
             if (Input.GetMouseButtonDown(0))
             {
-               
                     shoot();
-                    
-                
             }
         }
         shootTime += Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.R) && !isReloading && ammo != maxAmmo)
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            reloadProgression = 0;
-            isReloading = true;
+            reload();
         }
 
         if (isReloading)
@@ -107,9 +101,14 @@ public class Gun : MonoBehaviour
         if (shootTime >= fireRate)
         {
 
-            if (ammo <= 0 || isReloading)
+            if (ammo <= 0)
             {
-                return;
+                if (isReloading)
+                {
+                    return;
+                }
+                reload();
+                
             }
 
             for (int i = 0; i < bulletCount; i++)
@@ -147,7 +146,14 @@ public class Gun : MonoBehaviour
 
         }
     }
-
+    void reload()
+    {
+        if (!isReloading && ammo != maxAmmo)
+        {
+            reloadProgression = 0;
+            isReloading = true;
+        }
+    }
     private void OnEnable()
     {
         //print(gameObject.name);
