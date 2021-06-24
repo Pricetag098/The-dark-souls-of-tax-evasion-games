@@ -29,5 +29,6 @@ public class EnemyShooting : MonoBehaviour
         if (em.withinRange == true) { 
             m_gun.GetComponent<Gun>().shoot();
         }
+
     }
 }

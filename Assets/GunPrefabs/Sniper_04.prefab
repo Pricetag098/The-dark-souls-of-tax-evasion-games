@@ -703,6 +703,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c5798663735e9642ae97c738a1f56e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlayer: 0
   isReloading: 0
   bulletCount: 1
   damage: 100
@@ -719,6 +720,11 @@ MonoBehaviour:
   bulletPrefab: {fileID: 4014302247835896479, guid: 0c787d8f9e07896498799f2472fe132f, type: 3}
   shootSound: {fileID: 8300000, guid: 895357a1de2dbd341bc4cf2b3fde9bef, type: 3}
   pitchRange: 0.1
+  timeSinceLastShot: 0
+  rFalloffRate: 0.1
+  rMaxTime: 1
+  recoilMulti: 0.1
+  recoilIntensity: 0
   adsMode: 3
   AdsPos: {x: -0.144, y: -0.044, z: 0}
   adsRate: 0.1

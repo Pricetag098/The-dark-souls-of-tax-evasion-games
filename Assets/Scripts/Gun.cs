@@ -79,7 +79,7 @@ public class Gun : MonoBehaviour
                     shoot();
                 }
             }
-            shootTime += Time.deltaTime;
+            
 
             if (Input.GetKeyDown(KeyCode.R))
             {
@@ -87,8 +87,8 @@ public class Gun : MonoBehaviour
             }
             DoAds();
         }
-
-            if (isReloading)
+        shootTime += Time.deltaTime;
+        if (isReloading)
         {
             reloadProgression += Time.deltaTime;
 
@@ -111,10 +111,8 @@ public class Gun : MonoBehaviour
     
      public void shoot()
     {
-       
         if (shootTime >= fireRate)
         {
-
             if (ammo <= 0)
             {
                 if (isReloading)
