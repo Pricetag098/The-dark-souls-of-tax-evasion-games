@@ -5741,7 +5741,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 340571056, guid: 810ec8b5c29a1fa4aab99d2426f77e6d, type: 3}
       propertyPath: currentAcc
-      value: 0.81
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 425686775, guid: 810ec8b5c29a1fa4aab99d2426f77e6d, type: 3}
       propertyPath: m_AnchorMax.y
@@ -5769,6 +5769,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1784927829, guid: 810ec8b5c29a1fa4aab99d2426f77e6d, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8148422018708480862, guid: 810ec8b5c29a1fa4aab99d2426f77e6d, type: 3}
+      propertyPath: isPlayer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8148422018708480862, guid: 810ec8b5c29a1fa4aab99d2426f77e6d, type: 3}
