@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Holster : MonoBehaviour
 {
+    public int ammo, maxAmmo;
+
 
     int selectedWeapon = 0;
 
@@ -40,6 +42,17 @@ public class Holster : MonoBehaviour
                 selectedWeapon--;
             }
             SelectWeapon();
+        }
+        Gun gun = transform.GetChild(selectedWeapon).gameObject.GetComponent<Gun>();
+        if (gun)
+        {
+            ammo = gun.ammo;
+            maxAmmo = gun.maxAmmo;
+        }
+        else
+        {
+            ammo = 0;
+            maxAmmo = 0;
         }
     }
 

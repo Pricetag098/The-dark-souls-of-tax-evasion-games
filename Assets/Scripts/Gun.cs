@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
-    
-
+    public bool isPlayer = true;
+      
     Vector3 defPos;
     float reloadProgression;
 
@@ -33,8 +33,12 @@ public class Gun : MonoBehaviour
 
     AudioSource audioSource;
 
+    [Header("Recoil")]
+    public float timeSinceLastShot = 0;
+    public float rFalloffRate = 0.1f, rMaxTime =1, recoilMulti = 0.1f,recoilIntensity;
+    float timeLastFired = 0;
 
-	float defFov;
+    float defFov;
 	public enum AdsMode { none, iron, holo, scope};
 	[Header("ADS Variables")]
 	public AdsMode adsMode;
@@ -57,28 +61,34 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isAuto)
+        if (isPlayer)
         {
-            if (Input.GetMouseButton(0))
+
+
+            if (isAuto)
             {
-                shoot();
-            }
-        }
-        else
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
+                if (Input.GetMouseButton(0))
+                {
                     shoot();
+                }
             }
-        }
-        shootTime += Time.deltaTime;
+            else
+            {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    shoot();
+                }
+            }
+            shootTime += Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            reload();
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                reload();
+            }
+            DoAds();
         }
 
-        if (isReloading)
+            if (isReloading)
         {
             reloadProgression += Time.deltaTime;
 
@@ -92,8 +102,12 @@ public class Gun : MonoBehaviour
                 transform.localPosition = defPos;
             }
         }
-		DoAds();
+		
+
+        timeSinceLastShot = Mathf.Clamp(Time.time - timeLastFired,0,rMaxTime);
+        recoilIntensity = calcRecoil();
     }
+
     
      public void shoot()
     {
@@ -110,6 +124,8 @@ public class Gun : MonoBehaviour
                 reload();
                 return;
             }
+            
+            timeLastFired = Time.time;
 
             for (int i = 0; i < bulletCount; i++)
             {
@@ -131,11 +147,11 @@ public class Gun : MonoBehaviour
 
                 GameObject bullet = Instantiate(bulletPrefab, tip.position, Quaternion.Euler(transform.forward));
                 bullet.transform.position = tip.position;
-                bullet.GetComponent<Bullet>().GO((dir + (rand * spread)) * bulletSpeed, damage);
+                bullet.GetComponent<Bullet>().GO((dir + (rand * spread) + (rand * recoilIntensity)).normalized * bulletSpeed, damage);
                 Destroy(bullet, 5);
             }
             ammo--;
-            print(ammo);
+            //print(ammo);
             shootTime = 0;
 
             if (shootSound)
@@ -147,6 +163,17 @@ public class Gun : MonoBehaviour
 
         }
     }
+
+
+    float calcRecoil()
+    {
+        
+        float recoilIntensity = 1- Mathf.Pow((timeSinceLastShot/rMaxTime),rFalloffRate);
+        return recoilIntensity * recoilMulti;
+    }
+
+
+
     void reload()
     {
         if (!isReloading && ammo != maxAmmo)
