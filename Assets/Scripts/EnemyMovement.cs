@@ -11,11 +11,16 @@ public class EnemyMovement : MonoBehaviour
     public GameObject player;
     public bool withinRange;
     public Vector3 player_v;
+    public Material[] skins;
     // Start is called before the first frame update
     void Start()
     {
         m_navmesh.SetDestination(safe.transform.position);
         m_navmesh.isStopped = false;
+        Material m_skin = skins[UnityEngine.Random.Range(0, skins.Length)];
+        SkinnedMeshRenderer renderer = gameObject.GetComponentInChildren<SkinnedMeshRenderer>();
+
+        renderer.material = m_skin;
     }
 
     // Update is called once per frame
