@@ -10,6 +10,7 @@ public class EnemyMovement : MonoBehaviour
     public GameObject safe;
     public GameObject player;
     public bool withinRange;
+    public Vector3 player_v;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +21,7 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 player_v = player.transform.position - transform.position;
+        player_v = player.transform.position - transform.position;
         if (player_v.magnitude < 30 && Vector3.Angle(transform.forward, player_v) < 85 && Vector3.Angle(transform.forward, player_v) > -85)
         {
             withinRange = true;
