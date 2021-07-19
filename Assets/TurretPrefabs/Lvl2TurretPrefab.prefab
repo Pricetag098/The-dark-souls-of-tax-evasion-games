@@ -79,7 +79,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1855496673469004104}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.128, y: -0, z: 0}
+  m_LocalPosition: {x: 0, y: -0, z: 0}
   m_LocalScale: {x: 6.3640027, y: 2.395136, z: 6.3640027}
   m_Children:
   - {fileID: 1855496672319528909}
@@ -1824,6 +1824,10 @@ PrefabInstance:
       propertyPath: head
       value: 
       objectReference: {fileID: 1855496674131608815}
+    - target: {fileID: 5122325046612836741, guid: ccd26258546e6e043ac0b7be4bc1661a, type: 3}
+      propertyPath: shootSound
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8971761914813164879, guid: ccd26258546e6e043ac0b7be4bc1661a, type: 3}
       propertyPath: m_Name
       value: Mg42 (1)
