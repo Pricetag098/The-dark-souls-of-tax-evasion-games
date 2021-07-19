@@ -21,7 +21,7 @@ public class Cam : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, body.position + offset, followSpeed * Time.deltaTime);
+        transform.position = Vector3.Lerp(transform.position, body.position + offset, followSpeed * Time.deltaTime);
         float angleY = -Input.GetAxisRaw("Mouse Y") * sensitivity;
         
         if (transform.rotation.eulerAngles.x + angleY > 90f && transform.rotation.eulerAngles.x + angleY < 180)

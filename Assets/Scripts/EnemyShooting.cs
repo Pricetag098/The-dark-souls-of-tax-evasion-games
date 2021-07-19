@@ -10,6 +10,7 @@ public class EnemyShooting : MonoBehaviour
     public Transform m_head;
     public GameObject player;
     public EnemyMovement em;
+    private Vector3 shootTarget;
 
     // Start is called before the first frame update
     void Start()
@@ -24,11 +25,19 @@ public class EnemyShooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        shootTarget = em.player_v + (em.player.GetComponent<Rigidbody>().velocity * (em.player_v.magnitude / m_gun.GetComponent<Gun>().bulletSpeed));
+        m_gun.GetComponent<Gun>().head.LookAt(transform.position + shootTarget);
 
-        // holster.transform.right = -(player.transform.position - gameObject.transform.position).normalized;
         if (em.withinRange == true) { 
             m_gun.GetComponent<Gun>().shoot();
         }
 
     }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawRay(gameObject.transform.position, shootTarget);
+    }
 }
+

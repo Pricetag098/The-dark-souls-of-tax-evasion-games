@@ -111,14 +111,15 @@ public class Gun : MonoBehaviour
     
      public void shoot()
     {
-        if (shootTime >= fireRate)
+		if (isReloading)
+		{
+			return;
+		}
+		if (shootTime >= fireRate)
         {
             if (ammo <= 0)
             {
-                if (isReloading)
-                {
-                    return;
-                }
+                
                 reload();
                 return;
             }
