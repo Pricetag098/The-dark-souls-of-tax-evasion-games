@@ -23,13 +23,13 @@ public class MechMovement : MonoBehaviour
         player_v = player.transform.position - transform.position;
         if (player_v.magnitude < 30 && Vector3.Angle(transform.forward, player_v) < 85 && Vector3.Angle(transform.forward, player_v) > -85)
         {
-            transform.forward = player_v;
+            transform.forward = new Vector3(player_v.x, transform.forward.y, player_v.z);
             withinRange = true;
             m_navmesh.isStopped = false;
             m_navmesh.SetDestination(player.transform.position);
             if (player_v.magnitude < 5)
             {
-                transform.forward = player_v;
+                
                 m_navmesh.isStopped = true;
             }
         }
