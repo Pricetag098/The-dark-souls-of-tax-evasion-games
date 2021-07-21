@@ -43,6 +43,6 @@ public class MechMovement : MonoBehaviour
                 m_navmesh.isStopped = true;
             }
         }
-        print("length: " +player_v.magnitude);
+        // print("length: " +player_v.magnitude);
     }
 }
