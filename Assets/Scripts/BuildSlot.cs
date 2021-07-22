@@ -51,9 +51,13 @@ public class BuildSlot : MonoBehaviour
 	{
 		if(Money.money > nextCost)
 		{
-			if (lvl < tParent.childCount)
+            if(lvl < tParent.childCount)
+            {
+                lvl++;
+            }
+            if (lvl < tParent.childCount-1)
 			{
-				lvl++;
+				
 				nextCost = costDict[lvl];
 			}
 		}

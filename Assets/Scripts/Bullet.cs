@@ -54,12 +54,12 @@ public class Bullet : MonoBehaviour
         {
             case BulletTypes.bullet:
                 {
-                    print(collision.gameObject.name);
-                    print(whatIsEnemy.value);
-                    print(whatIsEnemy);
+                   
+                    //print(whatIsEnemy.value);
+                   // print(whatIsEnemy);
                     if ((whatIsEnemy.value & (1 << collision.gameObject.layer))>0)
                     {
-
+                        print(collision.gameObject.name);
                         if (collision.gameObject.GetComponent<Health>())
                         {
                             collision.gameObject.GetComponent<Health>().DoDamage(damage);
