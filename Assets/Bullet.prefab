@@ -99,11 +99,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletType: 0
-  minBounceAngle: 120
+  minBounceAngle: 100
   damage: 0
   whatIsEnemy:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 192
   armingDist: 0
   expRadius: 0
   expForce: 0

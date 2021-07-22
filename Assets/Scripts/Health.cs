@@ -8,6 +8,8 @@ public class Health : MonoBehaviour
 
     public bool isPlayer;
 
+    public GameObject destroyOnDeath;
+
 
     // Start is called before the first frame update
     private void Start()
@@ -34,6 +36,14 @@ public class Health : MonoBehaviour
     }
     void OnDeath()
     {
-        Destroy(gameObject);
+        if (destroyOnDeath)
+        {
+            Destroy(destroyOnDeath);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        
     }
 }
