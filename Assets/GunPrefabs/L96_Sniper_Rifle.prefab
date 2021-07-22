@@ -129,7 +129,7 @@ MonoBehaviour:
   isPlayer: 0
   isReloading: 0
   bulletCount: 1
-  damage: 50
+  damage: 100
   bulletSpeed: 100
   fireRate: 1
   spread: 0

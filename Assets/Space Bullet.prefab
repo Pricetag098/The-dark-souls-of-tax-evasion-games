@@ -5405,7 +5405,7 @@ MonoBehaviour:
   damage: 0
   whatIsEnemy:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 192
   armingDist: 0
   expRadius: 0
   expForce: 0
