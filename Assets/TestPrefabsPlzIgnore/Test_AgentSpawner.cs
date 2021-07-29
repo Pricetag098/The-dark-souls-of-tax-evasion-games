@@ -22,9 +22,19 @@ public class Test_AgentSpawner : MonoBehaviour
             if(Random.value < spamOdds)
             {
                 currentAgent = Instantiate(Agent, transform.position, transform.rotation, transform);
-                currentAgent.GetComponent<EnemyMovement>().player = player;
-                currentAgent.GetComponent<EnemyShooting>().player = player;
-                currentAgent.GetComponent<EnemyMovement>().safe = safe;
+				if (currentAgent.GetComponent<EnemyMovement>())
+				{
+					currentAgent.GetComponent<EnemyMovement>().player = player;
+					currentAgent.GetComponent<EnemyShooting>().player = player;
+					currentAgent.GetComponent<EnemyMovement>().safe = safe;
+				}
+
+				if (currentAgent.GetComponent<MechMovement>())
+				{
+					currentAgent.GetComponent<MechMovement>().player = player;
+					//currentAgent.GetComponent<EnemyShooting>().player = player;
+					currentAgent.GetComponent<MechMovement>().safe = safe;
+				}
             }
         }
 
@@ -35,9 +45,18 @@ public class Test_AgentSpawner : MonoBehaviour
         else
         {
             currentAgent = Instantiate(Agent,transform.position,transform.rotation,transform);
-            currentAgent.GetComponent<EnemyMovement>().player = player;
-            currentAgent.GetComponent<EnemyShooting>().player = player;
-            currentAgent.GetComponent<EnemyMovement>().safe = safe;
-        }
+			if (currentAgent.GetComponent<EnemyMovement>())
+			{
+				currentAgent.GetComponent<EnemyMovement>().player = player;
+				currentAgent.GetComponent<EnemyShooting>().player = player;
+				currentAgent.GetComponent<EnemyMovement>().safe = safe;
+			}
+			if (currentAgent.GetComponent<MechMovement>())
+			{
+				currentAgent.GetComponent<MechMovement>().player = player;
+				//currentAgent.GetComponent<EnemyShooting>().player = player;
+				currentAgent.GetComponent<MechMovement>().safe = safe;
+			}
+		}
     }
 }
