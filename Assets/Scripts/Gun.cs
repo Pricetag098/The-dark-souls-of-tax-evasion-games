@@ -173,7 +173,7 @@ public class Gun : MonoBehaviour
 
 
 
-    void reload()
+    public void reload()
     {
         if (!isReloading && ammo != maxAmmo)
         {
