@@ -21,7 +21,7 @@ public class TerrainGenerator : MonoBehaviour
     public GameObject[] objectSpawns;
 
 
-    public static float seed = 0;
+    public static float seed = 2;
 
     float minHeight = 0, maxHeight = 0;
     public Gradient gradient;
