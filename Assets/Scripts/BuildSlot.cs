@@ -31,6 +31,11 @@ public class BuildSlot : MonoBehaviour
 					costDict.Add(1, 1200);
 					break;
 				}
+            case Types.health:
+                {
+                    costDict.Add(0, 500);
+                    break;
+                }
 
 		}
 		nextCost = costDict[lvl];
