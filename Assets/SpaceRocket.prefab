@@ -4861,7 +4861,7 @@ MonoBehaviour:
     m_Bits: 192
   armingDist: 0
   expRadius: 2.5
-  expForce: 1000
+  expForce: 30000
   explosionVfx: {fileID: 7524987645932327752, guid: debdb6eeb9fec9a4e9fb2877ee3cc3f3, type: 3}
 --- !u!136 &2971875488164044414
 CapsuleCollider:
