@@ -10,6 +10,7 @@ public class EnemyShooting : MonoBehaviour
     public Transform m_head;
     public GameObject player;
     public EnemyMovement em;
+    public LayerMask whatIsEnemy;
     private Vector3 shootTarget;
 
     // Start is called before the first frame update
@@ -28,8 +29,17 @@ public class EnemyShooting : MonoBehaviour
         shootTarget = em.player_v + (em.player.GetComponent<Rigidbody>().velocity * (em.player_v.magnitude / m_gun.GetComponent<Gun>().bulletSpeed));
         m_gun.GetComponent<Gun>().head.LookAt(transform.position + shootTarget);
 
-        if (em.withinRange == true) { 
-            m_gun.GetComponent<Gun>().shoot();
+        if (em.withinRange == true) {
+            RaycastHit hit;
+            if (Physics.Raycast(m_gun.GetComponent<Gun>().head.transform.position, shootTarget, out hit, Mathf.Infinity, whatIsEnemy))
+            {
+                
+            }
+            else
+            {
+                m_gun.GetComponent<Gun>().shoot();
+            }
+                
         }
 
     }

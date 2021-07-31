@@ -11,10 +11,11 @@ public class GameManager : MonoBehaviour
     public GameObject safe;
     public GameObject player_b;
     public int wave;
-    public int lives;
+    public float lives;
     public int state;
     private bool spawned;
     private float timer;
+    public GameManager gm;
 
 
     // Start is called before the first frame update
@@ -35,30 +36,134 @@ public class GameManager : MonoBehaviour
         {
             if (wave == 1)
             {
-                if (timer > 2 && spawned == false)
+                if (spawned == false)
                 {
-                    SpawnAgent(2);
-                    timer = 0;
+                    Invoke("SpawnAgent", 5);
+                    Invoke("SpawnAgent", 10);
+                    Invoke("SpawnAgent", 15);
+                    Invoke("SpawnAgent", 20);
                     spawned = true;
+                }
+                
+                if (timer > 20)
+                {
+                    enemyCheck();
+                }
+            }
+            if (wave == 2)
+            {
+                if (spawned == false)
+                {
+                    Invoke("SpawnAgent", 4);
+                    Invoke("SpawnAgent", 8);
+                    Invoke("SpawnAgent", 12);
+                    Invoke("SpawnAgent", 16);
+                    Invoke("SpawnAgent", 20);
+                    Invoke("SpawnAgent", 24);
+                    spawned = true;
+                }
+
+                if (timer > 24)
+                {
+                    enemyCheck();
+                }
+            }
+            if (wave == 3)
+            {
+                if (spawned == false)
+                {
+                    Invoke("SpawnAgent", 4);
+                    Invoke("SpawnAgent", 8); 
+                    Invoke("SpawnAgent", 12);
+                    Invoke("SpawnAgent", 16);
+                    Invoke("SpawnAgent", 16);
+                    Invoke("SpawnAgent", 22);
+                    Invoke("SpawnAgent", 22);
+                    Invoke("SpawnAgent", 22);
+                    spawned = true;
+                }
+
+                if (timer > 22)
+                {
+                    enemyCheck();
+                }
+            }
+            if (wave == 4)
+            {
+                if (spawned == false)
+                {
+                    Invoke("SpawnAgent", 4);
+                    Invoke("SpawnAgent", 4);
+                    Invoke("SpawnAgent", 8);
+                    Invoke("SpawnAgent", 8);
+                    Invoke("SpawnAgent", 12);
+                    Invoke("SpawnAgent", 12);
+                    Invoke("SpawnAgent", 16);
+                    Invoke("SpawnAgent", 16);
+                    Invoke("SpawnAgent", 20);
+                    Invoke("SpawnAgent", 20);
+                    spawned = true;
+                }
+
+                if (timer > 20)
+                {
+                    enemyCheck();
+                }
+            }
+            if (wave == 5)
+            {
+                if (spawned == false)
+                {
+                    Invoke("SpawnAgent", 4);
+                    Invoke("SpawnAgent", 4);
+                    Invoke("SpawnAgent", 8);
+                    Invoke("SpawnAgent", 8);
+                    Invoke("SpawnMech", 8);
+                    spawned = true;
+                }
+
+                if (timer > 8)
+                {
+                    enemyCheck();
                 }
             }
         }
     }
 
-    void SpawnAgent(int num) {
-        for (int i = 0; i<num; i++) {
-            GameObject a1 = Instantiate(agent);
-            a1.transform.position = SpawnPoint.position;
-            a1.GetComponent<EnemyMovement>().safe = safe;
-            a1.GetComponent<EnemyMovement>().player = player_b;
-        }
+    void SpawnAgent() {
+        GameObject a1 = Instantiate(agent);
+        a1.transform.position = SpawnPoint.position;
+        a1.GetComponent<EnemyMovement>().safe = safe;
+        a1.GetComponent<EnemyMovement>().player = player_b;
+        a1.GetComponent<EnemyMovement>().gm = gm;
     }
 
-    void SpawnMech(int num)
+    void SpawnMech()
     {
-        for (int i = 0; i < num; i++)
+        GameObject m1 = Instantiate(mech);
+        m1.transform.position = SpawnPoint.position;
+        m1.GetComponent<MechMovement>().safe = safe;
+        m1.GetComponent<MechMovement>().player = player_b;
+        m1.GetComponent<MechMovement>().gm = gm;
+    }
+
+    void enemyCheck()
+    {
+        object[] obj = FindObjectsOfType(typeof(GameObject));
+        int n = 0;
+        foreach (object o in obj)
         {
-            Instantiate(mech, SpawnPoint);
+            GameObject g = (GameObject)o;
+           if (g.tag == "enemy")
+            {
+                n += 1;
+            }
+        }
+        if (n == 0)
+        {
+            wave += 1;
+            spawned = false;
+            timer = 0;
         }
     }
 

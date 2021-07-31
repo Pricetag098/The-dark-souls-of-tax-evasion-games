@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 1365325226403574531}
   m_Layer: 0
   m_Name: Agent
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -203,6 +203,9 @@ MonoBehaviour:
   m_head: {fileID: 1365325225540501751}
   player: {fileID: 0}
   em: {fileID: 1365325226403574780}
+  whatIsEnemy:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!195 &1365325226403574531
 NavMeshAgent:
   m_ObjectHideFlags: 0

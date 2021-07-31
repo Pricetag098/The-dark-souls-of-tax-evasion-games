@@ -10,6 +10,7 @@ public class MechMovement : MonoBehaviour
     public GameObject player;
     public bool withinRange;
     public Vector3 player_v;
+    public GameManager gm;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +42,10 @@ public class MechMovement : MonoBehaviour
             if (Vector3.Distance(transform.position, safe.transform.position) < 2)
             {
                 m_navmesh.isStopped = true;
+            }
+            if (Vector3.Distance(transform.position, safe.transform.position) < 5)
+            {
+                gm.lives -= 5000;
             }
         }
         // print("length: " +player_v.magnitude);

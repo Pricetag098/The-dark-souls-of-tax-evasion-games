@@ -14,6 +14,7 @@ public class MechShooting : MonoBehaviour
     private float timer;
     private bool l_fired;
     private bool r_fired;
+    public LayerMask whatIsEnemy;
 
     // Start is called before the first frame update
     void Start()
@@ -46,7 +47,16 @@ public class MechShooting : MonoBehaviour
             if (mode == 1)
             {
                 head.transform.LookAt(transform.position + gun_to_tar[mg]);
-                mg.GetComponent<Gun>().shoot();
+                RaycastHit hit;
+                if (Physics.Raycast(mg.GetComponent<Gun>().head.transform.position, shootTarget, out hit, Mathf.Infinity, whatIsEnemy))
+                {
+
+                }
+                else
+                {
+                    mg.GetComponent<Gun>().shoot();
+                }
+                
                 if (timer > 20)
                 {
                     timer = 0;
@@ -61,10 +71,19 @@ public class MechShooting : MonoBehaviour
                 {
                     if (l_fired == false)
                     {
-                        print("shooting left");
                         head.transform.LookAt(transform.position + gun_to_tar[rl_1]);
-                        rl_1.GetComponent<Gun>().shoot();
-                        l_fired = true;
+                        RaycastHit hit;
+                        if (Physics.Raycast(head.transform.position, shootTarget, out hit, Mathf.Infinity, whatIsEnemy))
+                        {
+
+                        }
+                        else
+                        {
+                            rl_1.GetComponent<Gun>().shoot();
+                            l_fired = true;
+                        }
+                        
+                        
                     }
                     
                 }
@@ -74,14 +93,24 @@ public class MechShooting : MonoBehaviour
                     {
                         print("shooting left");
                         head.transform.LookAt(transform.position + gun_to_tar[rl_2]);
-                        rl_2.GetComponent<Gun>().shoot();
-                        r_fired = true;
+                        RaycastHit hit;
+                        if (Physics.Raycast(head.transform.position, shootTarget, out hit, Mathf.Infinity, whatIsEnemy))
+                        {
+
+                        }
+                        else
+                        {
+                            rl_2.GetComponent<Gun>().shoot();
+                            r_fired = true;
+                        }
+                        
+                        
                     }
                 }
                 if (timer > 3)
                 {
                     timer = 0;
-                    mode = 1;
+                    mode = 1; 
                     rl_1.GetComponent<Gun>().reload();
                     rl_2.GetComponent<Gun>().reload();
                     r_fired = false;
@@ -91,7 +120,16 @@ public class MechShooting : MonoBehaviour
             if (mode == 3)
             {
                 head.transform.LookAt(transform.position + gun_to_tar[blaster]);
-                blaster.GetComponent<Gun>().shoot();
+                RaycastHit hit;
+                if (Physics.Raycast(head.transform.position, shootTarget, out hit, Mathf.Infinity, whatIsEnemy))
+                {
+
+                }
+                else
+                {
+                    blaster.GetComponent<Gun>().shoot();
+                }
+                
                 if (timer > 5)
                 {
                     timer = 0;
