@@ -2943,11 +2943,13 @@ MonoBehaviour:
   SpawnPoint: {fileID: 697311157}
   agent: {fileID: 1365325226403574781, guid: c5f1eb66212f6b04cac07079eae8b31e, type: 3}
   mech: {fileID: 7102827062938401132, guid: dba52fe035ed16c4eb83b3fc10ea67f8, type: 3}
+  joe: {fileID: 4364890914887512115, guid: 0066685eedc01074db919fae8243c979, type: 3}
   safe: {fileID: 1544399663}
   player_b: {fileID: 1220351038}
   wave: 0
   lives: 0
   state: 0
+  spawned: 0
   gm: {fileID: 1108624676}
 --- !u!1001 &1109163065
 PrefabInstance:
