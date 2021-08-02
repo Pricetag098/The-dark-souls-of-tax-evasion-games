@@ -15,6 +15,7 @@ public class MechShooting : MonoBehaviour
     private bool l_fired;
     private bool r_fired;
     public LayerMask whatIsEnemy;
+    public Health mh;
 
     // Start is called before the first frame update
     void Start()
@@ -57,11 +58,24 @@ public class MechShooting : MonoBehaviour
                     mg.GetComponent<Gun>().shoot();
                 }
                 
-                if (timer > 20)
+                if (timer > 5)
                 {
                     timer = 0;
                     mode = 2;
                     mg.GetComponent<Gun>().reload();
+                }
+                if (mh.health / mh.maxHealth < 0.5)
+                {
+                    head.transform.LookAt(transform.position + gun_to_tar[blaster]);
+                    RaycastHit hit2;
+                    if (Physics.Raycast(head.transform.position, shootTarget, out hit2, Mathf.Infinity, whatIsEnemy))
+                    {
+
+                    }
+                    else
+                    {
+                        blaster.GetComponent<Gun>().shoot();
+                    }
                 }
 
             }
@@ -113,22 +127,14 @@ public class MechShooting : MonoBehaviour
                     mode = 1; 
                     rl_1.GetComponent<Gun>().reload();
                     rl_2.GetComponent<Gun>().reload();
+                    l_fired = false;
                     r_fired = false;
                 }
             }
 
             if (mode == 3)
             {
-                head.transform.LookAt(transform.position + gun_to_tar[blaster]);
-                RaycastHit hit;
-                if (Physics.Raycast(head.transform.position, shootTarget, out hit, Mathf.Infinity, whatIsEnemy))
-                {
-
-                }
-                else
-                {
-                    blaster.GetComponent<Gun>().shoot();
-                }
+                
                 
                 if (timer > 5)
                 {

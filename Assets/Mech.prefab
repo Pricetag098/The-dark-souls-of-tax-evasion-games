@@ -645,6 +645,7 @@ MonoBehaviour:
   player: {fileID: 0}
   withinRange: 0
   player_v: {x: 0, y: 0, z: 0}
+  gm: {fileID: 0}
 --- !u!195 &7102827062938401135
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -685,6 +686,10 @@ MonoBehaviour:
   blaster: {fileID: 6865488533041201009}
   head: {fileID: 7103392380326708161}
   mm: {fileID: 7102827062938401134}
+  whatIsEnemy:
+    serializedVersion: 2
+    m_Bits: 0
+  mh: {fileID: 859514474}
 --- !u!136 &859514475
 CapsuleCollider:
   m_ObjectHideFlags: 0
