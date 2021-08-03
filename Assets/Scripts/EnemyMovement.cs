@@ -12,6 +12,7 @@ public class EnemyMovement : MonoBehaviour
     public bool withinRange;
     public Vector3 player_v;
     public Material[] skins;
+    public GameManager gm;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +47,10 @@ public class EnemyMovement : MonoBehaviour
             if (Vector3.Distance(transform.position, safe.transform.position) < 2)
             {
                 m_navmesh.isStopped = true;
+            }
+            if (Vector3.Distance(transform.position, safe.transform.position) < 5)
+            {
+                gm.lives -= 500;
             }
         }
         // print(player_v.magnitude);
