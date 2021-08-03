@@ -246,28 +246,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 1741304879729045121}
     m_Modifications:
     - target: {fileID: 2291086051012553348, guid: 936ab2d6d9dd20041874824e07d2a19c, type: 3}
-      propertyPath: ammo
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2291086051012553348, guid: 936ab2d6d9dd20041874824e07d2a19c, type: 3}
-      propertyPath: head
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2291086051012553348, guid: 936ab2d6d9dd20041874824e07d2a19c, type: 3}
       propertyPath: scopeGo
       value: 
       objectReference: {fileID: 436428388382451726}
-    - target: {fileID: 2291086051012553348, guid: 936ab2d6d9dd20041874824e07d2a19c, type: 3}
-      propertyPath: isPlayer
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2291086051012553349, guid: 936ab2d6d9dd20041874824e07d2a19c, type: 3}
       propertyPath: m_Name
       value: Sniper_04
-      objectReference: {fileID: 0}
-    - target: {fileID: 2291086051012553349, guid: 936ab2d6d9dd20041874824e07d2a19c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2296625832437861113, guid: 936ab2d6d9dd20041874824e07d2a19c, type: 3}
       propertyPath: m_RootOrder
@@ -283,7 +267,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2296625832437861113, guid: 936ab2d6d9dd20041874824e07d2a19c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.16200003
+      value: 0.14
       objectReference: {fileID: 0}
     - target: {fileID: 2296625832437861113, guid: 936ab2d6d9dd20041874824e07d2a19c, type: 3}
       propertyPath: m_LocalRotation.w

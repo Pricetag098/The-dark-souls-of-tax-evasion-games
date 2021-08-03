@@ -43,7 +43,7 @@ public class Holster : MonoBehaviour
             }
             SelectWeapon();
         }
-        Gun gun = transform.GetChild(selectedWeapon).gameObject.GetComponent<Gun>();
+        Gun gun = transform.GetChild(selectedWeapon).GetComponentInChildren<Gun>();
         if (gun)
         {
             ammo = gun.ammo;

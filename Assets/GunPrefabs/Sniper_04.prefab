@@ -703,14 +703,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c5798663735e9642ae97c738a1f56e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlayer: 0
+  isPlayer: 1
   isReloading: 0
   bulletCount: 1
   damage: 100
   bulletSpeed: 500
   fireRate: 1
   spread: 0
-  ammo: 8
+  ammo: 10
   maxAmmo: 10
   isAuto: 0
   rEndPos: 0.1
