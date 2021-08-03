@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        lives = 1000000000;
+        lives = 100000000;
         wave = 1;
         state = 2;
         spawned = false;
