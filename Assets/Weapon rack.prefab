@@ -2421,6 +2421,38 @@ Transform:
   m_Father: {fileID: 8333252282243536128}
   m_RootOrder: 54
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3420865426872655062
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2573863445043648727}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.19, y: 0.78999996, z: 3.7476165}
+  m_Center: {x: 0, y: 0, z: -0.48881048}
+--- !u!114 &3420865426872655063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2573863445043648727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c5c60d950e8604b9d21a6165e13c3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  holster: {fileID: 0}
+  GunModel: {fileID: 8116129700047029759, guid: acacbbdd1db31134eaa5c54127a26731, type: 3}
+  cost: 60
+  parentPanel: {fileID: 6128898654244971493}
+  mats:
+  - {fileID: 2100000, guid: 49424ce37fcf4174bb93cca7dd414716, type: 2}
+  - {fileID: 2100000, guid: 5a617a026f2ffaf40b7b86df78bf5385, type: 2}
 --- !u!1 &2645538889915389326
 GameObject:
   m_ObjectHideFlags: 0
@@ -3138,6 +3170,38 @@ Transform:
   m_Father: {fileID: 8333252282243536128}
   m_RootOrder: 106
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3420865426901231194
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3420865426308885545}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.8715243, y: 0.23632368, z: 0.033369396}
+  m_Center: {x: -0.11630206, y: -0.033833485, z: 0.00000047124922}
+--- !u!114 &3420865426901231193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3420865426308885545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c5c60d950e8604b9d21a6165e13c3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  holster: {fileID: 0}
+  GunModel: {fileID: 2507947922272278651, guid: 3c90d80ea00dc0e43959a9a8e64f5b30, type: 3}
+  cost: 30
+  parentPanel: {fileID: 6128898654329857814}
+  mats:
+  - {fileID: 2100000, guid: 49424ce37fcf4174bb93cca7dd414716, type: 2}
+  - {fileID: 2100000, guid: 5a617a026f2ffaf40b7b86df78bf5385, type: 2}
 --- !u!1 &3420865426506940898
 GameObject:
   m_ObjectHideFlags: 0
@@ -4279,6 +4343,38 @@ MonoBehaviour:
   mats:
   - {fileID: 2100000, guid: 49424ce37fcf4174bb93cca7dd414716, type: 2}
   - {fileID: 2100000, guid: 5a617a026f2ffaf40b7b86df78bf5385, type: 2}
+--- !u!65 &3420865428000846684
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3420865427399667608}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1711308, y: 0.196875, z: 0.06372535}
+  m_Center: {x: -0.25240475, y: 0.025244504, z: 0.008856234}
+--- !u!114 &3420865428000846675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3420865427399667608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c5c60d950e8604b9d21a6165e13c3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  holster: {fileID: 0}
+  GunModel: {fileID: 473450070345255457, guid: 525597163402255488b614c161ea054f, type: 3}
+  cost: 35
+  parentPanel: {fileID: 6128898654640392701}
+  mats:
+  - {fileID: 2100000, guid: 49424ce37fcf4174bb93cca7dd414716, type: 2}
+  - {fileID: 2100000, guid: 5a617a026f2ffaf40b7b86df78bf5385, type: 2}
 --- !u!65 &3420865426783193220
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4311,70 +4407,6 @@ MonoBehaviour:
   mats:
   - {fileID: 2100000, guid: 49424ce37fcf4174bb93cca7dd414716, type: 2}
   - {fileID: 2100000, guid: 5a617a026f2ffaf40b7b86df78bf5385, type: 2}
---- !u!65 &3420865426872655062
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2573863445043648727}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.19, y: 0.78999996, z: 3.7476165}
-  m_Center: {x: 0, y: 0, z: -0.48881048}
---- !u!114 &3420865426872655063
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2573863445043648727}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52c5c60d950e8604b9d21a6165e13c3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  holster: {fileID: 0}
-  GunModel: {fileID: 8116129700047029759, guid: acacbbdd1db31134eaa5c54127a26731, type: 3}
-  cost: 60
-  parentPanel: {fileID: 6128898654244971493}
-  mats:
-  - {fileID: 2100000, guid: 49424ce37fcf4174bb93cca7dd414716, type: 2}
-  - {fileID: 2100000, guid: 5a617a026f2ffaf40b7b86df78bf5385, type: 2}
---- !u!65 &3420865426901231194
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3420865426308885545}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.8715243, y: 0.23632368, z: 0.033369396}
-  m_Center: {x: -0.11630206, y: -0.033833485, z: 0.00000047124922}
---- !u!114 &3420865426901231193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3420865426308885545}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52c5c60d950e8604b9d21a6165e13c3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  holster: {fileID: 0}
-  GunModel: {fileID: 2507947922272278651, guid: 3c90d80ea00dc0e43959a9a8e64f5b30, type: 3}
-  cost: 30
-  parentPanel: {fileID: 6128898654329857814}
-  mats:
-  - {fileID: 2100000, guid: 49424ce37fcf4174bb93cca7dd414716, type: 2}
-  - {fileID: 2100000, guid: 5a617a026f2ffaf40b7b86df78bf5385, type: 2}
 --- !u!65 &3420865426934326435
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4401,41 +4433,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   holster: {fileID: 0}
-  GunModel: {fileID: 1062259362758265852, guid: 7b35834078e425748ad8e239f04d0b2a, type: 3}
+  GunModel: {fileID: 7829862608485498675, guid: f61ae077c86c6884ebe43b5f3dba0462, type: 3}
   cost: 60
   parentPanel: {fileID: 6128898655626645826}
-  mats:
-  - {fileID: 2100000, guid: 49424ce37fcf4174bb93cca7dd414716, type: 2}
-  - {fileID: 2100000, guid: 5a617a026f2ffaf40b7b86df78bf5385, type: 2}
---- !u!65 &3420865427808766819
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3422106264992155896}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.19521475, y: 0.33398074, z: 0.98336494}
-  m_Center: {x: -0.03368045, y: 0.049107507, z: 0.008318991}
---- !u!114 &3420865427808766816
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3422106264992155896}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52c5c60d950e8604b9d21a6165e13c3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  holster: {fileID: 0}
-  GunModel: {fileID: 6059215884213517606, guid: 2ef7a42e22269324aa2716de3f05d4bd, type: 3}
-  cost: 200
-  parentPanel: {fileID: 6128898654442444486}
   mats:
   - {fileID: 2100000, guid: 49424ce37fcf4174bb93cca7dd414716, type: 2}
   - {fileID: 2100000, guid: 5a617a026f2ffaf40b7b86df78bf5385, type: 2}
@@ -4503,35 +4503,35 @@ MonoBehaviour:
   mats:
   - {fileID: 2100000, guid: 49424ce37fcf4174bb93cca7dd414716, type: 2}
   - {fileID: 2100000, guid: 5a617a026f2ffaf40b7b86df78bf5385, type: 2}
---- !u!65 &3420865428000846684
+--- !u!65 &3420865427808766819
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3420865427399667608}
+  m_GameObject: {fileID: 3422106264992155896}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.1711308, y: 0.196875, z: 0.06372535}
-  m_Center: {x: -0.25240475, y: 0.025244504, z: 0.008856234}
---- !u!114 &3420865428000846675
+  m_Size: {x: 0.19521475, y: 0.33398074, z: 0.98336494}
+  m_Center: {x: -0.03368045, y: 0.049107507, z: 0.008318991}
+--- !u!114 &3420865427808766816
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3420865427399667608}
+  m_GameObject: {fileID: 3422106264992155896}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 52c5c60d950e8604b9d21a6165e13c3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   holster: {fileID: 0}
-  GunModel: {fileID: 473450070345255457, guid: 525597163402255488b614c161ea054f, type: 3}
-  cost: 35
-  parentPanel: {fileID: 6128898654640392701}
+  GunModel: {fileID: 6059215884213517606, guid: 2ef7a42e22269324aa2716de3f05d4bd, type: 3}
+  cost: 200
+  parentPanel: {fileID: 6128898654442444486}
   mats:
   - {fileID: 2100000, guid: 49424ce37fcf4174bb93cca7dd414716, type: 2}
   - {fileID: 2100000, guid: 5a617a026f2ffaf40b7b86df78bf5385, type: 2}
