@@ -50,7 +50,7 @@ public class EnemyMovement : MonoBehaviour
             }
             if (Vector3.Distance(transform.position, safe.transform.position) < 5)
             {
-                gm.lives -= 500;
+                gm.lives -= Mathf.Round(500000*Time.deltaTime);
             }
         }
         // print(player_v.magnitude);

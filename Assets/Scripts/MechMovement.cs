@@ -45,7 +45,7 @@ public class MechMovement : MonoBehaviour
             }
             if (Vector3.Distance(transform.position, safe.transform.position) < 5)
             {
-                gm.lives -= 5000;
+                gm.lives -= Mathf.Round(500000 * Time.deltaTime);
             }
         }
         // print("length: " +player_v.magnitude);
