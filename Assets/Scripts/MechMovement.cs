@@ -43,9 +43,9 @@ public class MechMovement : MonoBehaviour
             {
                 m_navmesh.isStopped = true;
             }
-            if (Vector3.Distance(transform.position, safe.transform.position) < 5)
+            if (Vector3.Distance(transform.position, safe.transform.position) < 10)
             {
-                gm.lives -= Mathf.Round(500000 * Time.deltaTime);
+                gm.lives -= Mathf.Round(750000 * Time.deltaTime);
             }
         }
         // print("length: " +player_v.magnitude);
