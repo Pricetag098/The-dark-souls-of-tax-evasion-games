@@ -19,6 +19,7 @@ public class Money : MonoBehaviour
         if(timer > incomeRate)
         {
             money += incomeAmount * lvl;
+            timer = 0;
         }
         timer += Time.deltaTime;
         testVar = money;
