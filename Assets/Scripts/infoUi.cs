@@ -7,7 +7,7 @@ using TMPro;
 public class infoUi : MonoBehaviour
 {
     public Image healthBar;
-    public TextMeshProUGUI ammoUi, maxAmmoUi,livesUi,waveNumUi;
+    public TextMeshProUGUI ammoUi, maxAmmoUi,livesUi,waveNumUi,moneyUi;
 
     public GameManager gm;
     public Holster holster;
@@ -24,6 +24,7 @@ public class infoUi : MonoBehaviour
     {
         ammoUi.text = holster.ammo.ToString();
         maxAmmoUi.text = holster.maxAmmo.ToString();
+        moneyUi.text = Money.money.ToString();
         healthBar.fillAmount = health.health / health.maxHealth;
         if (gm)
         {
