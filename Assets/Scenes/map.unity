@@ -3277,8 +3277,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testVar: 0
-  incomeRate: 10
-  incomeAmount: 20
+  incomeRate: 5
+  incomeAmount: 10
 --- !u!1001 &1109163065
 PrefabInstance:
   m_ObjectHideFlags: 0
