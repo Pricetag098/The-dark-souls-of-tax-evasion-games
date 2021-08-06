@@ -506,7 +506,7 @@ public class GameManager : MonoBehaviour
                     spawned = true;
                 }
 
-                if (timer > 4)
+                if (timer > 4.5)
                 {
                     enemyCheck();
                     message.text = "";
@@ -578,7 +578,7 @@ public class GameManager : MonoBehaviour
 
     void LoadMenu()
     {
-        SceneManager.LoadScene("menu");
+        SceneManager.LoadScene("Menu");
     }
 
 }

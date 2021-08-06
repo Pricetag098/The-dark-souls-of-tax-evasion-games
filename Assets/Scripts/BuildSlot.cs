@@ -54,10 +54,11 @@ public class BuildSlot : MonoBehaviour
 
 	public void OnUpGrade()
 	{
-		if(Money.money > nextCost)
+		if(Money.money >= nextCost)
 		{
             if(lvl < tParent.childCount)
             {
+				Money.money -= nextCost;
                 lvl++;
             }
             if (lvl < tParent.childCount-1)
