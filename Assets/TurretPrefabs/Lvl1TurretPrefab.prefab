@@ -1737,6 +1737,10 @@ PrefabInstance:
       propertyPath: head
       value: 
       objectReference: {fileID: 7166529022722308712}
+    - target: {fileID: 5122325046612836741, guid: ccd26258546e6e043ac0b7be4bc1661a, type: 3}
+      propertyPath: damage
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8971761914813164879, guid: ccd26258546e6e043ac0b7be4bc1661a, type: 3}
       propertyPath: m_Name
       value: Mg42

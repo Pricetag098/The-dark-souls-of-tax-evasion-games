@@ -1748,6 +1748,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8910166109647682837}
     - target: {fileID: 5122325046612836741, guid: ccd26258546e6e043ac0b7be4bc1661a, type: 3}
+      propertyPath: damage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5122325046612836741, guid: ccd26258546e6e043ac0b7be4bc1661a, type: 3}
       propertyPath: shootSound
       value: 
       objectReference: {fileID: 0}
@@ -1832,6 +1836,10 @@ PrefabInstance:
       propertyPath: head
       value: 
       objectReference: {fileID: 8910166109647682837}
+    - target: {fileID: 5122325046612836741, guid: ccd26258546e6e043ac0b7be4bc1661a, type: 3}
+      propertyPath: damage
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8971761914813164879, guid: ccd26258546e6e043ac0b7be4bc1661a, type: 3}
       propertyPath: m_Name
       value: Mg42
@@ -1917,6 +1925,10 @@ PrefabInstance:
       propertyPath: head
       value: 
       objectReference: {fileID: 8910166109647682837}
+    - target: {fileID: 5122325046612836741, guid: ccd26258546e6e043ac0b7be4bc1661a, type: 3}
+      propertyPath: damage
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5122325046612836741, guid: ccd26258546e6e043ac0b7be4bc1661a, type: 3}
       propertyPath: shootSound
       value: 
@@ -2006,6 +2018,10 @@ PrefabInstance:
       propertyPath: head
       value: 
       objectReference: {fileID: 8910166109647682837}
+    - target: {fileID: 5122325046612836741, guid: ccd26258546e6e043ac0b7be4bc1661a, type: 3}
+      propertyPath: damage
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5122325046612836741, guid: ccd26258546e6e043ac0b7be4bc1661a, type: 3}
       propertyPath: shootSound
       value: 
